@@ -1,1 +1,1 @@
-# akan-name-generator
+# AKAN NAME GENERATOR
