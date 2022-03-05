@@ -55,6 +55,9 @@ section#main p{
 
 section#main div.card{
   width: 75%;
+  border-radius: 3rem;
+  box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
 
