@@ -45,7 +45,7 @@ section#intro img{
 }
 
 section#main{
-  padding-top: 8rem;
+  padding: 6rem 0;
 }
 
 section#main p{
@@ -63,7 +63,7 @@ section#main div.card{
 
 @media screen and (max-width: 578px) {
   section#main {
-    padding-top: 4rem;
+    padding: 4rem 0;
   }
 
   section#main div.card {
