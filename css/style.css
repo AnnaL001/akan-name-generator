@@ -19,6 +19,7 @@ input.form-control:focus, select.form-select:focus {
 .btn{
   padding: 1rem 0.75rem;
   border-radius: 6rem;
+  font-weight: 600;
 }
 
 
