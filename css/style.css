@@ -6,9 +6,21 @@ p{
   font-size: 0.9rem;
 }
 
-div.intro{
-  background-color: rgb(76, 134, 0);
+input.form-control, select.form-select{
+  border-radius: 6rem;
+  font-size: 0.9rem;
 }
+
+input.form-control:focus, select.form-select:focus {
+  border-color: rgba(25, 135, 84, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.2);
+}
+
+.btn{
+  padding: 1rem 0.75rem;
+  border-radius: 6rem;
+}
+
 
 section#intro{
   color: rgb(255, 255, 255);
@@ -31,3 +43,18 @@ section#intro img{
   margin-left: auto;
   margin-right: auto;
 }
+
+section#main{
+  padding-top: 10rem;
+}
+
+section#main p{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+section#main div.card{
+  width: 75%;
+}
+
+
