@@ -58,3 +58,12 @@ section#main div.card{
 }
 
 
+@media screen and (max-width: 578px) {
+  section#main {
+    padding-top: 4rem;
+  }
+
+  section#main div.card {
+    width: 100%;
+  }
+}
