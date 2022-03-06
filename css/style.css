@@ -21,6 +21,9 @@ input.form-control:focus, select.form-select:focus {
   font-weight: 600;
 }
 
+div.alert{
+  border-radius: 6rem;
+}
 
 section#intro{
   color: rgb(255, 255, 255);
@@ -60,6 +63,10 @@ section#main div.card{
   z-index: 2;
 }
 
+section#main div#alerts{
+  width: 75%;
+}
+
 
 @media screen and (max-width: 578px) {
   section#main {
@@ -67,6 +74,9 @@ section#main div.card{
   }
 
   section#main div.card {
+    width: 100%;
+  }
+  section#main div#alerts {
     width: 100%;
   }
 }
