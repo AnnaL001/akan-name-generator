@@ -16,8 +16,7 @@ form.addEventListener('submit', function(event){
     let day = parseInt(birth_date.value.split('-')[0]);
 
     let dayOfTheWeek = (((century/4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7;
-    console.log(`${Math.floor(dayOfTheWeek)}`);
-    let name = generateAkanName(gender, Math.floor(dayOfTheWeek));
+    let name = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek));
     displaySuccessMessage(`Your Akan Name is ${name}`);
   } 
 });
@@ -30,7 +29,7 @@ const isDateValid = (input) => {
     let day = parseInt(input.split('-')[0]);
     let month = parseInt(input.split('-')[1]);
     let year = parseInt(input.split('-')[2]);
-    if(dayValidation(day, month, year) && monthValidation(month)){
+    if(validateDay(day, month, year) && validateMonth(month)){
       isValid = true;
     } 
   }
@@ -38,8 +37,18 @@ const isDateValid = (input) => {
   return isValid;
 }
 
+const computedDayOfTheWeek = (number) => {
+  let roundedNumber = number.toFixed(1);
+  if(parseInt(roundedNumber.split(".")[1]) !== 0){
+	  roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
+  } else {
+    roundedNumber = parseInt(roundedNumber.split(".")[0])
+  }
+  return roundedNumber;
+}
 
-const dayValidation = (input, month, year) => {
+
+const validateDay = (input, month, year) => {
   let isDayValid;
   if(input <= 0 || input > 31){
     isDayValid = false;
@@ -49,7 +58,7 @@ const dayValidation = (input, month, year) => {
   return isDayValid;
 }
 
-const monthValidation = (input) => {
+const validateMonth = (input) => {
   let isMonthValid;
   if(input <= 0 || input > 12){
     isMonthValid = false;
@@ -75,7 +84,7 @@ function displaySuccessMessage(message){
   alertSection.appendChild(div);
 }
 
-// Generate Akan Name
+// Akan Names with a direct mapping of the day of the week 
 let maleNames = ['Kwasi', 'Kwadwo', 'Kwabena' , 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
 let femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
 
