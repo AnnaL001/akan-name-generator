@@ -12,7 +12,7 @@ The Akan Name Generator records a user's birthday and gender, then computes the 
 ## Known Bugs
 The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
 ## BDD
-| **Behavior**                              | **Input Example**                           | **Output Example**                                                 |
+| **Behavior**                              | **Input Example**                           | **Output**                                                         |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
 | When nothing is entered on the form       | Birthday = undefined, Gender = undefined    | HTML5 Form validation tooltips display, informing user to enter input    |
 | When an invalid day is entered            | Birthday = 40-03-2020                       | Error alert displays, informing user of the valid day renge     |
