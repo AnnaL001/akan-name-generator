@@ -14,7 +14,7 @@ The application does not have appropriate validation of day in regards to the mo
 ## BDD
 | **Behavior**                              | **Input Example**                           | **Output Example**                                                 |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
-| When nothing is entered on the form       | Birthday = undefined, Gender = undefined    | HTML5 Validation tooltips display informing user to enter input    |
+| When nothing is entered on the form       | Birthday = undefined, Gender = undefined    | HTML5 Form validation tooltips display informing user to enter input    |
 | When an invalid day is entered            | Birthday = 40-03-2020                       | Error alert is displayed informing user of the valid day renge     |
 | When an invalid month is entered          | Birthday = 12-13-2020                       | Error alert is displayed informing user of the valid month range   |
 | When the incorrect date format is entered | Birthday = ggggh                            | Error alert is displayed informing user of the correct date format |
