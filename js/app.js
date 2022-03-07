@@ -60,6 +60,7 @@ const computedDayOfTheWeek = (number, year) => {
 
   // If the day results in a decimal point with tenth value not equal to 0, the day is evaluates to the next day
   if(parseInt(roundedNumber.split(".")[1]) !== 0){
+    // Check for leap year
 	  if(year % 4 === 0){
       roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
     } else {
