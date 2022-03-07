@@ -18,8 +18,8 @@ form.addEventListener('submit', function(event){
     // Compute the day of the week
     let dayOfTheWeek = (((century/4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7;
     // Generate the Akan Name and display it to the user
-    let name = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek));
-    displaySuccessMessage(`Your Akan Name is ${name}`);
+    let result = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek));
+    displaySuccessMessage(`Your Akan Name is ${result[0]} as you were born on ${result[1]}`);
   } 
 });
 
@@ -125,56 +125,71 @@ let femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
  */
 function generateAkanName(gender, day){
   let akanName;
+  let dayOfTheWeek;
   if(gender.value === 'male'){
     switch(day){
       case 0:
         akanName = 'Kwasi';
+        dayOfTheWeek = 'Sunday';
         break;
       case 1:
         akanName = 'Kwadwo';
+        dayOfTheWeek = 'Monday';
         break;
       case 2:
         akanName = 'Kwabena';
+        dayOfTheWeek = 'Tuesday';
         break;
       case 3:
         akanName = 'Kwaku';
+        dayOfTheWeek = 'Wednesday';
         break;
       case 4:
         akanName = 'Yaw';
+        dayOfTheWeek = 'Thursday';
         break;
       case 5:
         akanName = 'Kofi';
+        dayOfTheWeek = 'Friday';
         break;
       case 6:
         akanName = 'Kwame';
+        dayOfTheWeek = 'Saturday';
         break;
     }
   } else {
     switch(day){
       case 0:
         akanName = 'Akosua';
+        dayOfTheWeek = 'Sunday';
         break;
       case 1:
         akanName = 'Adwoa';
+        dayOfTheWeek = 'Monday';
         break;
       case 2:
         akanName = 'Abenaa';
+        dayOfTheWeek = 'Tuesday';
         break;
       case 3:
         akanName = 'Akua';
+        dayOfTheWeek = 'Wednesday';
         break;
       case 4:
         akanName = 'Yaa';
+        dayOfTheWeek = 'Thursday';
         break;
       case 5:
         akanName = 'Afua';
+        dayOfTheWeek = 'Friday';
         break;
       case 6:
         akanName = 'Ama';
+        dayOfTheWeek = 'Saturday';
         break;
     }
   }
-  return akanName;
+  return [akanName, dayOfTheWeek];
 }
 
 
