@@ -3,7 +3,7 @@ body{
 }
 
 p{
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 input.form-control, select.form-select{
@@ -36,7 +36,7 @@ section#intro h1.title{
 }
 
 section#intro p.para{
-  line-height: 1.5rem;
+  line-height: 2rem;
   text-align: center;
   font-weight: 400;
 }
@@ -52,7 +52,6 @@ section#main{
 }
 
 section#main p{
-  font-size: 1rem;
   font-weight: 600;
 }
 
