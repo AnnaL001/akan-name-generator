@@ -41,19 +41,7 @@ const isDateValid = (input) => {
 
 const dayValidation = (input, month, year) => {
   let isDayValid;
-  if(!!(year % 4 === 0 & month === 2)){
-    if(input > 29 && input <= 0){
-      isDayValid = false;
-    } else {
-      isDayValid = true;
-    }
-  } else if(month === 2){
-    if(input > 28 && input <= 0){
-      isDayValid = false;
-    } else {
-      isDayValid = true;
-    }
-  }else if(input <= 0 || input > 31){
+  if(input <= 0 || input > 31){
     isDayValid = false;
   } else {
     isDayValid = true;
