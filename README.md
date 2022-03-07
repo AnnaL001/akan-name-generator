@@ -14,11 +14,11 @@ The application does not have appropriate validation of day in regards to the mo
 ## BDD
 | **Behavior**                              | **Input Example**                           | **Output Example**                                                 |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
-| When nothing is entered on the form       | Birthday = undefined, Gender = undefined    | HTML5 Form validation tooltips display informing user to enter input    |
-| When an invalid day is entered            | Birthday = 40-03-2020                       | Error alert is displayed informing user of the valid day renge     |
-| When an invalid month is entered          | Birthday = 12-13-2020                       | Error alert is displayed informing user of the valid month range   |
-| When the incorrect date format is entered | Birthday = ggggh                            | Error alert is displayed informing user of the correct date format |
-| When valid inputs are provided            | Birthday = 12-12-2020, Gender = Female      | Success alert is displayed with the corresponding Akan Name for the day of the week and gender     |   
+| When nothing is entered on the form       | Birthday = undefined, Gender = undefined    | HTML5 Form validation tooltips display, informing user to enter input    |
+| When an invalid day is entered            | Birthday = 40-03-2020                       | Error alert displays, informing user of the valid day renge     |
+| When an invalid month is entered          | Birthday = 12-13-2020                       | Error alert displays, informing user of the valid month range   |
+| When the incorrect date format is entered | Birthday = ggggh                            | Error alert displays, informing user of the correct date format |
+| When valid inputs are provided            | Birthday = 12-12-2020, Gender = Female      | Success alert displays with the corresponding Akan Name for the day of the week and gender     |   
 ## Technologies Used
 * HTML - For structuring the website
 * CSS - For custom styling the website
