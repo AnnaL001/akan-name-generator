@@ -18,7 +18,8 @@ form.addEventListener('submit', function(event){
     // Compute the day of the week
     let dayOfTheWeek = (((century/4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7;
     // Generate the Akan Name and display it to the user
-    let result = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek));
+    let result = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek,year));
+    console.log(`${dayOfTheWeek} - ${computedDayOfTheWeek(dayOfTheWeek,year)}`);
     displaySuccessMessage(`Your Akan Name is ${result[0]} as you were born on ${result[1]}`);
   } 
 });
@@ -49,7 +50,7 @@ const isDateValid = (input) => {
  * @returns the final computed day of the week
  */
 
-const computedDayOfTheWeek = (number) => {
+const computedDayOfTheWeek = (number, year) => {
   let roundedNumber = number.toFixed(1);
 
   // If calculated day is greater than 6, minus 7 to push to another week thus traverse Akan Array Names again
@@ -59,7 +60,11 @@ const computedDayOfTheWeek = (number) => {
 
   // If the day results in a decimal point with tenth value not equal to 0, the day is evaluates to the next day
   if(parseInt(roundedNumber.split(".")[1]) !== 0){
-	  roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
+	  if(year % 4 === 0){
+      roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
+    } else {
+      roundedNumber = parseInt(roundedNumber.split(".")[0]) + 2;
+    }
   } else {
     roundedNumber = parseInt(roundedNumber.split(".")[0])
   }
