@@ -11,6 +11,9 @@ The Akan Name Generator records a user's birthday and gender, then computes the 
   https://annal001.github.io/akan-name-generator/
 ## Known Bugs
 The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
+## BDD
+| **Behavior** | **Input Example** | **Output Example**|
+|--------------|:-----------------:|------------------:|
 ## Technologies Used
 * HTML - For structuring the website
 * CSS - For custom styling the website
