@@ -11,7 +11,7 @@ The picture used in the landing page has been retrieved from the internet; <br>
 * To get the web application's code on your local machine, you can clone the repository from the main branch or download the ZIP folder; by navigating to the 'Code' button
 * After you can view or edit the code locally via a text editor 
 * Otherwise to view the web application in a browser, navigate to the link below <br>
-  https://annal001.github.io/akan-name-generator/
+  [Link to live site](https://annal001.github.io/akan-name-generator/)
 ## Known Bugs
 The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
 ## BDD
