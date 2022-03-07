@@ -7,7 +7,7 @@ let alertSection = document.getElementById('alerts');
 form.addEventListener('submit', function(event){
   event.preventDefault();
   if(!isDateValid(birth_date.value)){
-    displayErrorMessage('Please input correct date format; DD-MM-YYYY where DD(day) is within range 1 - 31 and MM(month) is within range 1 - 12');
+    displayErrorMessage('Please input correct date format; DD-MM-YYYY according to calendar');
   } else {
     // Compute values needed to determine the day of the week 
     let century = parseInt(birth_date.value.split('-')[2].slice(0,2));
@@ -26,17 +26,17 @@ form.addEventListener('submit', function(event){
 
 /**
  * 
- * @param {*} input a birth date value
- * @returns if birth date is valid
+ * @param {*} birth_day Day of birth
+ * @returns If day of birth is valid
  */
-const isDateValid = (input) => {
+const isDateValid = (birth_day) => {
   let isValid = false;
 
-  if(/^\d{2}-\d{2}-\d{4}$/.test(input)){
-    let day = parseInt(input.split('-')[0]);
-    let month = parseInt(input.split('-')[1]);
-    let year = parseInt(input.split('-')[2]);
-    if(validateDay(day) && validateMonth(month)){
+  if(/^\d{2}-\d{2}-\d{4}$/.test(birth_day)){
+    let day = parseInt(birth_day.split('-')[0]);
+    let month = parseInt(birth_day.split('-')[1]);
+    let year = parseInt(birth_day.split('-')[2]);
+    if(validateDay(day, month, year) && validateMonth(month)){
       isValid = true;
     } 
   }
@@ -46,8 +46,10 @@ const isDateValid = (input) => {
 
 /**
  * 
- * @param {*} number generated day of the week by the formula to get day of the week
- * @returns the final computed day of the week
+ * @param {*} birth_day Day of the birthday
+ * @param {*} birth_year Year of birth
+ * @param {*} birth_month Birthday month
+ * @returns Computed day of the week
  */
 
 const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
@@ -110,32 +112,37 @@ const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
 
 /**
  * 
- * @param {*} input a day value
- * @returns if day value is valid
+ * @param {*} birth_day Day of the birth
+ * @param {*} birth_month Birthday month
+ * @param {*} birth_year Year of birth
+ * @returns if day of the birth is valid
  */
-const validateDay = (input) => {
+const validateDay = (birth_day, birth_month, birth_year) => {
   let isDayValid;
-  if(input <= 0 || input > 31){
-    isDayValid = false;
+  if(birth_year % 4 === 0){
+    if(birth_month === 2){
+      isDayValid = birth_day > 29 || birth_day <= 0 ? false : true;
+    } else {
+      isDayValid = birth_day <= 0 || birth_day > 31 ? false : true;
+    }
   } else {
-    isDayValid = true;
+    if(birth_month === 2){
+      isDayValid = birth_day > 28 || birth_day <= 0 ? false : true;
+    } else {
+      isDayValid = birth_day <= 0 || birth_day > 31 ? false : true;
+    }
   }
   return isDayValid;
 }
 
 /**
  * 
- * @param {*} input a month value
- * @returns if month value is valid
+ * @param {*} birth_month Birthday month
+ * @returns If birthday month is valid
  */
 
-const validateMonth = (input) => {
-  let isMonthValid;
-  if(input <= 0 || input > 12){
-    isMonthValid = false;
-  } else {
-    isMonthValid = true;
-  }
+const validateMonth = (birth_month) => {
+  let isMonthValid = birth_month <= 0 || birth_month > 12 ? false : true;
   return isMonthValid;
 }
 
