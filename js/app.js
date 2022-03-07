@@ -1,4 +1,4 @@
-//Add validation
+//Fetch HTML elements
 let form = document.getElementById('akan-name-generator-form');
 let birth_date = document.getElementById('birth_date');
 let gender = document.getElementById('gender');
@@ -9,19 +9,25 @@ form.addEventListener('submit', function(event){
   if(!isDateValid(birth_date.value)){
     displayErrorMessage('Please input correct date format; DD-MM-YYYY where DD(day) is within range 1 - 31 and MM(month) is within range 1 - 12');
   } else {
-    // Compute day of the week 
+    // Compute values needed to determine the day of the week 
     let century = parseInt(birth_date.value.split('-')[2].slice(0,2));
     let year = parseInt(birth_date.value.split('-')[2].slice(2,));
     let month = parseInt(birth_date.value.split('-')[1]);
     let day = parseInt(birth_date.value.split('-')[0]);
 
+    // Compute the day of the week
     let dayOfTheWeek = (((century/4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7;
+    // Generate the Akan Name and display it to the user
     let name = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek));
     displaySuccessMessage(`Your Akan Name is ${name}`);
   } 
 });
 
-// Form validation
+/**
+ * 
+ * @param {*} input a birth date value
+ * @returns if birth date is valid
+ */
 const isDateValid = (input) => {
   let isValid = false;
 
@@ -29,13 +35,19 @@ const isDateValid = (input) => {
     let day = parseInt(input.split('-')[0]);
     let month = parseInt(input.split('-')[1]);
     let year = parseInt(input.split('-')[2]);
-    if(validateDay(day, month, year) && validateMonth(month)){
+    if(validateDay(day) && validateMonth(month)){
       isValid = true;
     } 
   }
 
   return isValid;
 }
+
+/**
+ * 
+ * @param {*} number generated day of the week by the formula to get day of the week
+ * @returns the final computed day of the week
+ */
 
 const computedDayOfTheWeek = (number) => {
   let roundedNumber = number.toFixed(1);
@@ -47,8 +59,12 @@ const computedDayOfTheWeek = (number) => {
   return roundedNumber;
 }
 
-
-const validateDay = (input, month, year) => {
+/**
+ * 
+ * @param {*} input a day value
+ * @returns if day value is valid
+ */
+const validateDay = (input) => {
   let isDayValid;
   if(input <= 0 || input > 31){
     isDayValid = false;
@@ -57,6 +73,12 @@ const validateDay = (input, month, year) => {
   }
   return isDayValid;
 }
+
+/**
+ * 
+ * @param {*} input a month value
+ * @returns if month value is valid
+ */
 
 const validateMonth = (input) => {
   let isMonthValid;
@@ -68,6 +90,10 @@ const validateMonth = (input) => {
   return isMonthValid;
 }
 
+/**
+ * @param {*} message error message to be displayed
+ */
+
 function displayErrorMessage(message){
   let div = document.createElement('div');
   div.classList.add('alert','alert-danger');
@@ -76,6 +102,9 @@ function displayErrorMessage(message){
   alertSection.appendChild(div);
 }
 
+/**
+ * @param {*} message success message to display
+ */
 function displaySuccessMessage(message){
   let div = document.createElement('div');
   div.classList.add('alert','alert-success');
@@ -84,11 +113,15 @@ function displaySuccessMessage(message){
   alertSection.appendChild(div);
 }
 
-// Akan Names with a direct mapping of the day of the week 
+// Akan Names with a direct mapping of the day of the week for male and female gender
 let maleNames = ['Kwasi', 'Kwadwo', 'Kwabena' , 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
 let femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
 
-
+/**
+ * @param {*} gender a gender value
+ * @param {*} day a day value
+ * @returns the generated Akan Name
+ */
 function generateAkanName(gender, day){
   let akanName;
   if(gender.value === 'male'){
