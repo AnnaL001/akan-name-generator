@@ -14,7 +14,7 @@ The picture used in the landing page has been retrieved from the internet; <br>
   [Link to live site](https://annal001.github.io/akan-name-generator/)
 ## Known Bugs
 The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
-## BDD
+## Behavior Driven Development(BDD)
 | **Behavior**                              | **Input Example**                           | **Output**                                                         |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
 | When nothing is entered on the form       | Birthday = undefined, Gender = undefined    | HTML5 Form validation tooltips display, informing user to enter input    |
