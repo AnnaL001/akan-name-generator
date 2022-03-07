@@ -4,6 +4,7 @@
 ## Description
 The Akan Name Generator records a user's birthday and gender, then computes the day of the week that the user was born using a predefined formula and finally generates an Akan Name taking into account the computed day of the week and their gender. Aside from these, it includes form validation to validate user's input.
 The picture used in the landing page has been retrieved from the internet; <br>
+For the display of feedback to the user, long enough for them to see, the form is not submitted. As a result, a user has to refresh the page to enter fresh input as the form fields do not automatically clear.
 * ghanaian-people.png - [Link to image's website](https://thumbs.dreamstime.com/b/ghanaian-national-clothes-flag-man-woman-traditional-costume-cute-cartoon-characters-travel-to-republic-ghana-122376153.jpg)
 ## Setup/Installation Requirements
 * Using a mobile device/laptop ensure you have access to internet connection
@@ -12,9 +13,6 @@ The picture used in the landing page has been retrieved from the internet; <br>
 * After you can view or edit the code locally via a text editor 
 * Otherwise to view the web application in a browser, navigate to the link below <br>
   [Link to live site](https://annal001.github.io/akan-name-generator/)
-## Known Bugs
-* Incorrect day of the week for years like 1999 that signify an end of a century.
-* Design: To input fresh input, a user has to refresh the page
 ## Behavior Driven Development(BDD)
 | **Behavior**                              | **Input Example**                           | **Output**                                                         |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
