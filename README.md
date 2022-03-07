@@ -12,8 +12,10 @@ The Akan Name Generator records a user's birthday and gender, then computes the 
 ## Known Bugs
 The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
 ## BDD
-| **Behavior** | **Input Example** | **Output Example**|
-|--------------|:-----------------:|------------------:|
+| **Behavior**                            | **Input Example**       | **Output Example**                                              |
+|-----------------------------------------|:-----------------------:|----------------------------------------------------------------:|
+| When nothing is entered on the form     | Birthday = undefined    | HTML5 Validation tooltips display prompting user to enter input |
+|                                         |                         |                                                                 |
 ## Technologies Used
 * HTML - For structuring the website
 * CSS - For custom styling the website
