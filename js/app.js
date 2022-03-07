@@ -51,6 +51,7 @@ const isDateValid = (input) => {
 
 const computedDayOfTheWeek = (number) => {
   let roundedNumber = number.toFixed(1);
+  // If the day results in a decimal point with tenth value not equal to 0, the day is equal to the next day
   if(parseInt(roundedNumber.split(".")[1]) !== 0){
 	  roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
   } else {
