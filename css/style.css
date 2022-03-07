@@ -2,6 +2,10 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
+/* ==============================
+  SECTION : UTILITIES
+=================================*/
+
 p{
   font-size: 1rem;
 }
@@ -25,6 +29,9 @@ div.alert{
   border-radius: 6rem;
 }
 
+/* ==============================
+  SECTION : INTRO
+=================================*/
 section#intro{
   color: rgb(255, 255, 255);
 }
@@ -47,6 +54,9 @@ section#intro img{
   margin-right: auto;
 }
 
+/* ==============================
+  SECTION : MAIN
+=================================*/
 section#main{
   padding: 6rem 0;
 }
@@ -66,7 +76,9 @@ section#main div#alerts{
   width: 75%;
 }
 
-
+/* ==============================
+  SECTION : MEDIA QUERIES
+=================================*/
 @media screen and (max-width: 578px) {
   section#main {
     padding: 4rem 0;
