@@ -75,7 +75,10 @@ const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
       
       if(roundedNumber >= 7){
         roundedNumber = parseInt(roundedNumber) - 7;
+      }else if(roundedNumber < 0){
+        roundedNumber = parseInt(roundedNumber) + 7;
       }
+
     } else {
       // Check if month is passed March
       if(birth_month < 3){
@@ -94,6 +97,9 @@ const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
     }
   } else {
     roundedNumber = parseInt(roundedNumber.split(".")[0]);
+    if(roundedNumber < 0){
+      roundedNumber = parseInt(roundedNumber) + 7;
+    }
   }
   return roundedNumber;
 }
