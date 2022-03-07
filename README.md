@@ -14,6 +14,7 @@ The picture used in the landing page has been retrieved from the internet; <br>
   [Link to live site](https://annal001.github.io/akan-name-generator/)
 ## Known Bugs
 * Incorrect day of the week for years like 1999 that signify an end of a century.
+* Design: To input fresh input, a user has to refresh the page
 ## Behavior Driven Development(BDD)
 | **Behavior**                              | **Input Example**                           | **Output**                                                         |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
