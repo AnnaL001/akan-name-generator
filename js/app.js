@@ -51,7 +51,13 @@ const isDateValid = (input) => {
 
 const computedDayOfTheWeek = (number) => {
   let roundedNumber = number.toFixed(1);
-  // If the day results in a decimal point with tenth value not equal to 0, the day is equal to the next day
+
+  // If calculated day is greater than 6, minus 7 to push to another week thus traverse Akan Array Names again
+  if(parseInt(roundedNumber.split(".")[0]) >= 7){
+    roundedNumber = parseInt(roundedNumber) - 7;
+  }
+
+  // If the day results in a decimal point with tenth value not equal to 0, the day is evaluates to the next day
   if(parseInt(roundedNumber.split(".")[1]) !== 0){
 	  roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
   } else {
