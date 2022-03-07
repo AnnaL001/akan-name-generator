@@ -18,8 +18,8 @@ form.addEventListener('submit', function(event){
     // Compute the day of the week
     let dayOfTheWeek = (((century/4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7;
     // Generate the Akan Name and display it to the user
-    let result = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek,year));
-    console.log(`${dayOfTheWeek} - ${computedDayOfTheWeek(dayOfTheWeek,year)}`);
+    let result = generateAkanName(gender, computedDayOfTheWeek(dayOfTheWeek,year, month));
+    console.log(`${dayOfTheWeek} - ${computedDayOfTheWeek(dayOfTheWeek,year, month)}`);
     displaySuccessMessage(`Your Akan Name is ${result[0]} as you were born on ${result[1]}`);
   } 
 });
@@ -50,8 +50,8 @@ const isDateValid = (input) => {
  * @returns the final computed day of the week
  */
 
-const computedDayOfTheWeek = (number, year) => {
-  let roundedNumber = number.toFixed(1);
+const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
+  let roundedNumber = birth_day.toFixed(1);
 
   // If calculated day is greater than 6, minus 7 to push to another week thus traverse Akan Array Names again
   if(parseInt(roundedNumber.split(".")[0]) >= 7){
@@ -61,13 +61,39 @@ const computedDayOfTheWeek = (number, year) => {
   // If the day results in a decimal point with tenth value not equal to 0, the day is evaluates to the next day
   if(parseInt(roundedNumber.split(".")[1]) !== 0){
     // Check for leap year
-	  if(year % 4 === 0){
-      roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
+	  if(birth_year % 4 === 0){
+      // Check if month is passed March
+      if(birth_month < 3){
+        if(birth_month === 2){
+          roundedNumber = parseInt(roundedNumber.split(".")[0]) + 2;
+        } else {
+          roundedNumber = parseInt(roundedNumber.split(".")[0]) + 1;
+        }
+      } else {
+        roundedNumber = parseInt(roundedNumber.split(".")[0]);
+      }
+      
+      if(roundedNumber >= 7){
+        roundedNumber = parseInt(roundedNumber) - 7;
+      }
     } else {
-      roundedNumber = parseInt(roundedNumber.split(".")[0]) + 2;
+      // Check if month is passed March
+      if(birth_month < 3){
+        roundedNumber = parseInt(roundedNumber.split(".")[0]) + 2;
+      }else if(birth_month === 5 || birth_month === 7 || birth_month === 10 || birth_month === 12){
+        roundedNumber = parseInt(roundedNumber.split(".")[0]) - 1;
+      } else {
+        roundedNumber = parseInt(roundedNumber.split(".")[0]);
+      }
+
+      if(roundedNumber >= 7){
+        roundedNumber = parseInt(roundedNumber) - 7;
+      } else if (roundedNumber < 0){
+        roundedNumber = parseInt(roundedNumber) + 7
+      }
     }
   } else {
-    roundedNumber = parseInt(roundedNumber.split(".")[0])
+    roundedNumber = parseInt(roundedNumber.split(".")[0]);
   }
   return roundedNumber;
 }
