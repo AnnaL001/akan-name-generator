@@ -4,7 +4,7 @@
 ## Description
 The Akan Name Generator records a user's birthday and gender, then computes the day of the week that the user was born using a predefined formula and finally generates an Akan Name taking into account the computed day of the week and their gender. Aside from these, it includes form validation to validate user's input.
 The picture used in the landing page has been retrieved from the internet; <br>
-* ghanaian-people.png - https://thumbs.dreamstime.com/b/ghanaian-national-clothes-flag-man-woman-traditional-costume-cute-cartoon-characters-travel-to-republic-ghana-122376153.jpg
+* ghanaian-people.png - [Link to website](https://thumbs.dreamstime.com/b/ghanaian-national-clothes-flag-man-woman-traditional-costume-cute-cartoon-characters-travel-to-republic-ghana-122376153.jpg)
 ## Setup/Installation Requirements
 * Using a mobile device/laptop ensure you have access to internet connection
 * To get the web application's code on your GitHub repository, you can fork the repository from the main branch; by pressing the 'Fork' button
