@@ -73,6 +73,7 @@ const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
         roundedNumber = parseInt(roundedNumber.split(".")[0]);
       }
       
+      // Handle out of bound values
       if(roundedNumber >= 7){
         roundedNumber = parseInt(roundedNumber) - 7;
       }else if(roundedNumber < 0){
@@ -89,6 +90,7 @@ const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
         roundedNumber = parseInt(roundedNumber.split(".")[0]);
       }
 
+      // Handle out of bound values
       if(roundedNumber >= 7){
         roundedNumber = parseInt(roundedNumber) - 7;
       } else if (roundedNumber < 0){
@@ -97,6 +99,8 @@ const computedDayOfTheWeek = (birth_day, birth_year, birth_month) => {
     }
   } else {
     roundedNumber = parseInt(roundedNumber.split(".")[0]);
+    
+    // Handle out of bound values
     if(roundedNumber < 0){
       roundedNumber = parseInt(roundedNumber) + 7;
     }
