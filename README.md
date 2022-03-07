@@ -13,7 +13,8 @@ The picture used in the landing page has been retrieved from the internet; <br>
 * Otherwise to view the web application in a browser, navigate to the link below <br>
   [Link to live site](https://annal001.github.io/akan-name-generator/)
 ## Known Bugs
-The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
+* The application does not have appropriate validation of day in regards to the month of February in a year that's either a leap year or not.
+* Years like 1999 where the century changes return the day of the week + 1; if Thursday returns Friday.
 ## Behavior Driven Development(BDD)
 | **Behavior**                              | **Input Example**                           | **Output**                                                         |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
