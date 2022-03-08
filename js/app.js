@@ -139,9 +139,9 @@ function displaySuccessMessage(message){
 }
 
 // Akan Names with a direct mapping of the day of the week for male and female gender
-let maleNames = ['Kwasi', 'Kwadwo', 'Kwabena' , 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
-let femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
-let daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const maleNames = ['Kwasi', 'Kwadwo', 'Kwabena' , 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
+const femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
+const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 /**
  * @param {*} gender a gender value
@@ -151,7 +151,7 @@ let daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fr
 function generateAkanName(gender, day){
   let akanName;
   let dayOfTheWeek;
-  
+
   if(gender.value === 'male'){
     akanName = maleNames[day];
     dayOfTheWeek = daysOfTheWeek[day];
