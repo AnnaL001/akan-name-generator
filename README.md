@@ -2,7 +2,7 @@
 #### A web application that generates an Akan Name based on the day of the week that one was born in and their gender.
 #### By **Lynn Nyangon**
 ## Description
-The Akan Name Generator records a user's birthday and gender, then computes the day of the week that the user was born using a predefined formula and finally generates an Akan Name taking into account the computed day of the week and their gender. Aside from these, it includes form validation to validate user's input.For the display of feedback to the user, long enough for them to see, the form is not submitted. As a result, a user has to refresh the page to enter fresh input as the form fields do not automatically clear.<br>
+The Akan Name Generator records a user's birthday and gender, then computes the day of the week that the user was born using a predefined formula and finally generates an Akan Name taking into account the computed day of the week and their gender. Aside from these, it includes form validation to validate user's input.
 The picture used in the landing page has been retrieved from the internet; <br>
 * ghanaian-people.png - [Link to image's website](https://thumbs.dreamstime.com/b/ghanaian-national-clothes-flag-man-woman-traditional-costume-cute-cartoon-characters-travel-to-republic-ghana-122376153.jpg) <br>
 
