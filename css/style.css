@@ -1,4 +1,4 @@
-body{
+body {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -6,11 +6,11 @@ body{
   SECTION : UTILITIES
 =================================*/
 
-p{
+p {
   font-size: 1rem;
 }
 
-input.form-control, select.form-select{
+input.form-control, select.form-select {
   border-radius: 6rem;
 }
 
@@ -19,40 +19,40 @@ input.form-control:focus, select.form-select:focus {
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.2);
 }
 
-.btn{
+.btn {
   padding: 1rem 0.75rem;
   border-radius: 6rem;
   font-weight: 600;
 }
 
-.btn-close{
+.btn-close {
   margin-right: 1rem;
 }
 
-div.alert{
+div.alert {
   border-radius: 6rem;
 }
 
 /* ==============================
   SECTION : INTRO
 =================================*/
-section#intro{
+section#intro {
   color: rgb(255, 255, 255);
 }
 
-section#intro h1.title{
+section#intro h1.title {
   font-size: 2rem;
   font-weight: 800;
   text-align: center;
 }
 
-section#intro p.para{
+section#intro p.para {
   line-height: 2rem;
   text-align: center;
   font-weight: 400;
 }
 
-section#intro img{
+section#intro img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -61,22 +61,22 @@ section#intro img{
 /* ==============================
   SECTION : MAIN
 =================================*/
-section#main{
+section#main {
   padding: 6rem 0;
 }
 
-section#main p{
+section#main p {
   font-weight: 600;
 }
 
-section#main div.card{
+section#main div.card {
   width: 75%;
   border-radius: 3rem;
   box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
 
-section#main div#alerts{
+section#main div#alerts {
   width: 75%;
 }
 
