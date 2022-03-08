@@ -101,14 +101,28 @@ const validateMonth = (birth_month) => {
 }
 
 /**
+ * @param {*} divElement Div element to append button to
+ */
+
+function createDismissButton(divElement){
+  let button = document.createElement('button');
+  button.classList.add('btn-close');
+  button.setAttribute('type', 'button');
+  button.setAttribute('data-bs-dismiss', 'alert');
+  button.setAttribute('aria-label', 'Close');
+  divElement.appendChild(button);
+}
+
+/**
  * @param {*} message error message to be displayed
  */
 
 function displayErrorMessage(message){
   let div = document.createElement('div');
-  div.classList.add('alert','alert-danger');
+  div.classList.add('alert','alert-danger','alert-dismissible', 'fade','show');
   div.setAttribute('role', 'alert');
   div.textContent = message;
+  createDismissButton(div);
   alertSection.appendChild(div);
 }
 
@@ -117,9 +131,10 @@ function displayErrorMessage(message){
  */
 function displaySuccessMessage(message){
   let div = document.createElement('div');
-  div.classList.add('alert','alert-success');
+  div.classList.add('alert','alert-success','alert-dismissible', 'fade','show');
   div.setAttribute('role', 'alert');
   div.textContent = message;
+  createDismissButton(div);
   alertSection.appendChild(div);
 }
 
