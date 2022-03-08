@@ -25,6 +25,10 @@ input.form-control:focus, select.form-select:focus {
   font-weight: 600;
 }
 
+.btn-close{
+  margin-right: 1rem;
+}
+
 div.alert{
   border-radius: 6rem;
 }
@@ -75,6 +79,7 @@ section#main div.card{
 section#main div#alerts{
   width: 75%;
 }
+
 
 /* ==============================
   SECTION : MEDIA QUERIES
