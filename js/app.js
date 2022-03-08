@@ -150,14 +150,12 @@ const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', '
  */
 function generateAkanName(gender, day){
   let akanName;
-  let dayOfTheWeek;
+  let dayOfTheWeek = daysOfTheWeek[day];
 
   if(gender.value === 'male'){
     akanName = maleNames[day];
-    dayOfTheWeek = daysOfTheWeek[day];
   } else {
     akanName = femaleNames[day];
-    dayOfTheWeek = daysOfTheWeek[day];
   }
 
   return [akanName, dayOfTheWeek];
