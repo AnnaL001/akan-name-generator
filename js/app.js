@@ -8,7 +8,7 @@ form.addEventListener('submit', function(event){
   // Prevent form submission to allow for display of feedback to user
   event.preventDefault();
   if(!isDateValid(birth_date.value)){
-    displayErrorMessage('Please input correct date format; DD-MM-YYYY according to calendar');
+    displayErrorMessage('Please input correct date format; DD-MM-YYYY according to the calendar');
   } else {
     // Compute values needed to determine the day of the week 
     let century = parseInt(birth_date.value.split('-')[2].slice(0,2));
