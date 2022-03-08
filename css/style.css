@@ -85,6 +85,10 @@ section#main div#alerts{
   SECTION : MEDIA QUERIES
 =================================*/
 @media screen and (max-width: 578px) {
+  .btn-close {
+    margin-right: 0.3rem;
+  }
+
   section#main {
     padding: 4rem 0;
   }
