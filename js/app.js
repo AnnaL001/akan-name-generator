@@ -141,6 +141,7 @@ function displaySuccessMessage(message){
 // Akan Names with a direct mapping of the day of the week for male and female gender
 let maleNames = ['Kwasi', 'Kwadwo', 'Kwabena' , 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
 let femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
+let daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 /**
  * @param {*} gender a gender value
@@ -150,69 +151,15 @@ let femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
 function generateAkanName(gender, day){
   let akanName;
   let dayOfTheWeek;
+  
   if(gender.value === 'male'){
-    switch(day){
-      case 0:
-        akanName = 'Kwasi';
-        dayOfTheWeek = 'Sunday';
-        break;
-      case 1:
-        akanName = 'Kwadwo';
-        dayOfTheWeek = 'Monday';
-        break;
-      case 2:
-        akanName = 'Kwabena';
-        dayOfTheWeek = 'Tuesday';
-        break;
-      case 3:
-        akanName = 'Kwaku';
-        dayOfTheWeek = 'Wednesday';
-        break;
-      case 4:
-        akanName = 'Yaw';
-        dayOfTheWeek = 'Thursday';
-        break;
-      case 5:
-        akanName = 'Kofi';
-        dayOfTheWeek = 'Friday';
-        break;
-      case 6:
-        akanName = 'Kwame';
-        dayOfTheWeek = 'Saturday';
-        break;
-    }
+    akanName = maleNames[day];
+    dayOfTheWeek = daysOfTheWeek[day];
   } else {
-    switch(day){
-      case 0:
-        akanName = 'Akosua';
-        dayOfTheWeek = 'Sunday';
-        break;
-      case 1:
-        akanName = 'Adwoa';
-        dayOfTheWeek = 'Monday';
-        break;
-      case 2:
-        akanName = 'Abenaa';
-        dayOfTheWeek = 'Tuesday';
-        break;
-      case 3:
-        akanName = 'Akua';
-        dayOfTheWeek = 'Wednesday';
-        break;
-      case 4:
-        akanName = 'Yaa';
-        dayOfTheWeek = 'Thursday';
-        break;
-      case 5:
-        akanName = 'Afua';
-        dayOfTheWeek = 'Friday';
-        break;
-      case 6:
-        akanName = 'Ama';
-        dayOfTheWeek = 'Saturday';
-        break;
-    }
+    akanName = femaleNames[day];
+    dayOfTheWeek = daysOfTheWeek[day];
   }
+
   return [akanName, dayOfTheWeek];
 }
 
